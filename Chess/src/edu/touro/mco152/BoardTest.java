@@ -2,6 +2,7 @@ package edu.touro.mco152;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.junit.After;
@@ -13,7 +14,7 @@ import org.junit.Test;
 import edu.touro.mco152.ChessPiece.PieceColor;
 
 public class BoardTest {
-
+	private Board b;
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -24,6 +25,7 @@ public class BoardTest {
 
 	@Before
 	public void setUp() throws Exception {
+		b=new Board();
 	}
 
 	@After
@@ -33,10 +35,10 @@ public class BoardTest {
 	
 	@Test
 	public void test() {
-		Board b=new Board();
-		assertEquals(b.getNumOfPieces(),0);
 		
-		Pawn white=new Pawn();
+		assertEquals(b.getNumOfPieces(),16);
+		
+	/*	Pawn white=new Pawn();
 		b.add(white);
 		assertEquals(b.getNumOfPieces(),1);
 		ChessPiece[] array1={white};
@@ -48,8 +50,27 @@ public class BoardTest {
 		assertEquals(b.getNumOfPieces(),2);
 		assertTrue(Arrays.equals(b.getList(),array2));
 		
-		//b.add(7);
-		
+		//b.add(7);*/
 	}
-
+	@Test
+	public void testCreate(){
+		ArrayList<ChessPiece> list;
+		list=b.getSecondRank();
+		String secondRank="";
+		String seventhRank="";
+		
+		secondRank=createString(list);
+		assertEquals("pppppppp",secondRank);
+		
+		list=b.getSeventhRank();
+		seventhRank=createString(list);
+		assertEquals("PPPPPPPP",seventhRank);
+	}
+	private String createString(ArrayList<ChessPiece> list){
+		String rank="";
+		for (int i=0;i<list.size();i++){
+			rank+=list.get(i).toString();
+		}
+		return rank;
+	}
 }

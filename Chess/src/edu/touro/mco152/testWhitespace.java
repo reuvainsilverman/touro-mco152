@@ -8,10 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import edu.touro.mco152.ChessPiece.PieceColor;
-
-public class PawnTest {
-	private Pawn whitePawn, blackPawn;
+public class testWhitespace {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -23,8 +20,6 @@ public class PawnTest {
 
 	@Before
 	public void setUp() throws Exception {
-		 whitePawn= new Pawn();
-		 blackPawn = new Pawn(PieceColor.BLACK);
 	}
 
 	@After
@@ -33,24 +28,12 @@ public class PawnTest {
 
 	@Test
 	public void test() {
+		assertEquals(true,Character.isWhitespace('\n'));
+		assertEquals(true,Character.isWhitespace('\t'));
+		assertEquals(true,Character.isWhitespace(' '));
 		
-		assertEquals(PieceColor.WHITE,whitePawn.getColor());
-	}
-	
-	@Test
-	public void testBlackConstruct() {
-		
-		assertEquals(PieceColor.BLACK, blackPawn.getColor());
-	}
-	@Test
-	public void testPawnPrint(){
-		assertEquals(whitePawn.toString(),"p");
-		assertEquals(blackPawn.toString(),"P");
-	}
-	
-	@Test
-	public void testCreate() {
-		
+		//assertEquals(true,Character.isWhitespace('.'));
+		//assertEquals(true,Character.isWhitespace('d'));
 		
 	}
 
