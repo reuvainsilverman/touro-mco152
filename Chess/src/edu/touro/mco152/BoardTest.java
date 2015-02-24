@@ -53,6 +53,20 @@ public class BoardTest {
 		//b.add(7);*/
 	}
 	@Test
+	public void testDrawBoard(){
+		String periods="........";
+		String picOfBoard="";
+		picOfBoard+=periods+"\n";//first rank
+		picOfBoard+= "pppppppp\n";//second rank
+		picOfBoard+=periods+"\n";//third
+		picOfBoard+=periods+"\n";//fourth
+		picOfBoard+=periods+"\n";//fifth
+		picOfBoard+=periods+"\n";//sixth
+		picOfBoard+="PPPPPPPP\n";//seventh
+		picOfBoard+=periods;//eighth
+		assertEquals(picOfBoard,b.toString());
+	}
+	@Test
 	public void testCreate(){
 		ArrayList<ChessPiece> list;
 		list=b.getSecondRank();

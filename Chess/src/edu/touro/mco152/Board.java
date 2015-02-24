@@ -41,6 +41,21 @@ public class Board {
 		return seventhRank;
 	}
 	
+	public String toString(){
+		String board="";
+		String periods="........";
+		board+=periods+"\n";//first rank
+		for(int i=0;i<secondRank.size();i++)
+			board+=secondRank.get(i).toString();//second rank
+		board+="\n"+periods+"\n";//third
+		board+=periods+"\n";//fourth
+		board+=periods+"\n";//fifth
+		board+=periods+"\n";//sixth
+		for(int i=0;i<seventhRank.size();i++)
+			board+=seventhRank.get(i).toString();//seventh
+		board+="\n"+periods; //eighth
+		return board;
+	}
 	
 	/*public void add(ChessPiece cP){
 		CPieces[numOfPieces]=cP;
